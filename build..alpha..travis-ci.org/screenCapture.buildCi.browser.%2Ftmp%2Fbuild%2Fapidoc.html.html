@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.router.router">
+            function <span class="apidocSignatureSpan"></span>router
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.router.Route">
             function <span class="apidocSignatureSpan">router.</span>Route
             <span class="apidocSignatureSpan">(path)</span>
@@ -484,6 +493,40 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.router" id="apidoc.module.router">module router</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.router.router" id="apidoc.element.router.router">
+        function <span class="apidocSignatureSpan"></span>router
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Router(options) {
+  if (!(this instanceof Router)) {
+    return new Router(options)
+  }
+
+  var opts = options || {}
+
+  function router(req, res, next) {
+    router.handle(req, res, next)
+  }
+
+  // inherit from the correct prototype
+  setPrototypeOf(router, this)
+
+  router.caseSensitive = opts.caseSensitive
+  router.mergeParams = opts.mergeParams
+  router.params = {}
+  router.strict = opts.strict
+  router.stack = []
+
+  return router
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
